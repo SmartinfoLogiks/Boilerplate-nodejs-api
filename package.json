@@ -1,6 +1,6 @@
 {
     "name": "com.smartinfologiks.api",
-    "title": "API Server",
+    "title": "SmartinfoLogiks API Server",
     "version": "1.0.0",
     "description": "API for internal purposes. This may be used for mapping, logging, tracking, artifact, data src, etc",
     "main": "index.js",

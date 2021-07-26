@@ -1,4 +1,4 @@
-# Boilerplate Nodejs API
+# Boilerplate Nodejs API - SmartinfoLogiks
 
 Boilerplate to quickly start a new API only project. This does not have a lots of wasted code. Just Point Blank Basic System.
 

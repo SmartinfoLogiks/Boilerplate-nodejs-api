@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: 'APIHub',
+    name: 'SILKAPIServer',
     script: 'index.js',
     instances : '1',
     watch: "api",

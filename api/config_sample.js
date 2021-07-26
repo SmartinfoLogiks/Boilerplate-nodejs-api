@@ -9,7 +9,7 @@ module.exports = {
 	env: process.env.NODE_ENV || 'development',
 	port: process.env.PORT || 9999,
 	host: process.env.HOST || "0.0.0.0",
-	welcome: "Welcome to API Server",
+	welcome: "Welcome to SmartinfoLogiks API Server",
 
 	debug: true,
 	remoteDebug: true,
