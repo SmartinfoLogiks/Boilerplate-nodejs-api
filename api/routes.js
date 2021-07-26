@@ -27,12 +27,10 @@ module.exports = function(server, restify) {
     });
 
     server.get('*', (req, res, next) => {
-        res.send(404);
-        return next();
+        return next(new errors.NotAcceptableError("Method or Path was not found or not acceptable by server"));
     });
     server.post('*', (req, res, next) => {
-        res.send(404);
-        return next();
+        return next(new errors.NotAcceptableError("Method or Path was not found or not acceptable by server"));
     });
 
     server.get('/ping', (req, res, next) => {
@@ -42,7 +40,7 @@ module.exports = function(server, restify) {
             res.send({
                 "SERVER": server.config.name,
                 "VERSION": server.config.version,
-                "TIMESTAMP": new Date()
+                "TIMESTAMP": moment().format("Y-M-D HH:mm:ss")
             });
             return next();
         } else {
@@ -51,23 +49,30 @@ module.exports = function(server, restify) {
         }
     });
 
-    server.get('/test', (req, res, next) => {
-        if(CONFIG.debug) {
-            res.send({
-                "BODY": req.body,
-                "QUERY": req.query,
-                "PARAMS": req.params,
-                "HEADERS": req.headers,
-                //"GUID":req.get("GUID"),
-                //"DEVID":req.body.devid,
-                "DEBUG": CONFIG.debug
-            });
-            return next();
-        } else {
-            res.send(404);
-            return next();
-        }
+    server.get('/timestamp', (req, res, next) => {
+        res.send(moment().format("Y-MM-DD HH:mm:ss"));
+        return next();
     });
+
+    server.get('/_debug', (req, res, next) => {
+        if (!CONFIG.debug) {
+          res.send(404);
+          return next();
+        }
+        res.header('content-type', 'json');
+        res.send(server.getDebugInfo(req, res));
+        return next();
+      });
+
+    server.post('/_debug', (req, res, next) => {
+        if (!CONFIG.debug) {
+          res.send(404);
+          return next();
+        }
+        res.header('content-type', 'json');
+        res.send(server.getDebugInfo(req, res));
+        return next();
+      });
 
     server.get('/routes', (req, res, next) => {
         if(CONFIG.debug) {

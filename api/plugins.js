@@ -23,7 +23,7 @@ module.exports = function(server, restify) {
     //server.use(restify.plugins.jsonBodyParser({ mapParams: true }));
     // server.use(restify.plugins.jsonp());
     server.use(restify.plugins.urlEncodedBodyParser());
-    server.use(restify.plugins.queryParser({ mapParams: true }));//req.query
+    server.use(restify.plugins.queryParser({ mapParams: false }));//req.query
     server.use(restify.plugins.acceptParser(server.acceptable));
     
     server.use(restify.plugins.dateParser());
