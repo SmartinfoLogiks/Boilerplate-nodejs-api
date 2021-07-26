@@ -26,6 +26,7 @@
         "bunyan-rotating-file-stream": "^1.6.3",
         "crypto": "^1.0.1",
         "csv-parse": ">=4.4.6",
+        "find-my-way": "^2.2.5",
         "ioredis": "^4.0.0",
         "js-base64": "^3.6.0",
         "js-sha512": "^0.8.0",
