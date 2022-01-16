@@ -9,13 +9,13 @@ module.exports = function(server) {
         //     new errors.ForbiddenError("Public Key Invalid"),
         // );
 
-        authkey = req.header("authkey");
+        var authkey = req.header("authkey");
 
         req.set("GUID", "TEST");
 
         //API Validator : FIND API Authentication Protocol for the GUID
         //Could be Bearer, OAuth2, 2FA, etc.
-        mbeeAuth = req.header("authorization");
+        var authHeader = req.header("authorization");
 
         //console.log("Security Authorization");
 
