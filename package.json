@@ -33,7 +33,7 @@
         "jsonwebtoken": "^8.4.0",
         "lodash": "^4.17.21",
         "md5": "^2.3.0",
-        "moment": "^2.22.2",
+        "moment": "^2.29.4",
         "mongoose": "^5.13.3",
         "mongoose-autopopulate": "^0.12.2",
         "mongoose-plugin-autoinc": "^1.1.9",
